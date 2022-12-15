@@ -1,6 +1,6 @@
 var searchMainEl = document.querySelector('#search-main');
 var searchMainBtnEl = document.querySelector('#search-main-btn');
-var weatherInfoEl = document.querySelector('#weatherInfo');
+var weatherInfoEl = document.querySelector('#currentWeather');
 var weatherApiKey = '424b38ba3001e9ed90818dd50436deee';
 
 var latitude = 41.8781;
@@ -51,6 +51,7 @@ var requestOptions = {
   
   .catch(error => console.log('error', error));
   
+
 
   });
 
