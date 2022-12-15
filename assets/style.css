@@ -1,11 +1,37 @@
 #currentWeather {
+    background-color: white;
+    border-radius: 2.5%;
     border: .1rem solid black;
-    margin: 1rem;
+    margin: 1rem 10rem 1rem 10rem;
     padding: .5rem;
+    opacity: .7;
 }
 
 header {
     text-align: center;
-    background-color: blue;
+    border-radius: 5%;
+    border: .1rem solid black;
+    background-color: white;
+    color: black;
+    margin: 1rem;
+    padding: 1rem;
+    opacity: .8;
+}
+
+body {
+    background-image: url(../images/sunrisephoto.avif);
+}
+
+.card {
+    opacity: .8;
+}
+
+#search-main {
+    opacity: .8;
+}
+
+#search-main-btn {
     color: white;
+    border-radius: 10%;
+    margin-left: 1rem;
 }
