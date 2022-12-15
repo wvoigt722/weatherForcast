@@ -1,3 +1,6 @@
+var searchMainEl = document.querySelector('#search-main');
+var searchMainBtnEl = document.querySelector('#search-main-btn');
+
 searchMainBtnEl.addEventListener('click', function() {
     console.log(searchMainEl.value);
     
@@ -27,8 +30,6 @@ searchMainBtnEl.addEventListener('click', function() {
     // eventually to be stored in main lat and long vars
     latitude = result.features[0].bbox[1];
     longitude = result.features[0].bbox[0];
-    
-    getInfo();
   
   
   })
