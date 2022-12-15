@@ -1,0 +1,11 @@
+#currentWeather {
+    border: .1rem solid black;
+    margin: 1rem;
+    padding: .5rem;
+}
+
+header {
+    text-align: center;
+    background-color: blue;
+    color: white;
+}
