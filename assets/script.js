@@ -6,18 +6,31 @@ var weatherApiKey = '424b38ba3001e9ed90818dd50436deee';
 var latitude = 41.8781;
 var longitude =  -87.6298;
 
+var dayOneDateEl = document.querySelector('#dayOneDate');
+var dayTwoDateEl = document.querySelector('#dayTwoDate');
+var dayThreeDateEl = document.querySelector('#dayThreeDate');
+var dayFourDateEl = document.querySelector('#dayFourDate');
+var dayFiveDateEl = document.querySelector('#dayFiveDate');
+
+var dayOneWeatherEl = document.querySelector('#dayOneWeather');
+var dayTwoWeatherEl = document.querySelector('#dayTwoWeather');
+var dayThreeWeatherEl = document.querySelector('#dayThreeWeather');
+var dayFourWeatherEl = document.querySelector('#dayFourWeather');
+var dayFiveWeatherEl = document.querySelector('#dayFiveWeather');
+
+// Event Listeners
 
 
 searchMainBtnEl.addEventListener('click', function() {
 weatherInfoEl.classList.remove('d-none');
 });
 
-// Event Listener
-
 
 searchMainBtnEl.addEventListener('click', function() {
     console.log(searchMainEl.value);
     
+
+
  // Geocode API
 
 var city = searchMainEl.value;
