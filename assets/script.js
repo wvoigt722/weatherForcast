@@ -57,7 +57,7 @@ var requestOptions = {
     longitude = result.features[0].bbox[0];
     latitude  = result.features[0].bbox[1];
 
-    getWeather();
+    getCurrentWeather();
   
   
   })
@@ -70,7 +70,7 @@ var requestOptions = {
 
 
 
-var getWeather = function() {
+var getCurrentWeather = function() {
 
   // Weather API
 
@@ -132,3 +132,76 @@ var getWeather = function() {
 
  
 };
+
+
+var getFiveDayWeather = function () {
+
+fetch('https://api.openweathermap.org/data/2.5/forecast?lat=' + latitude + '&lon=' + longitude + '&appid=' + weatherApiKey + '&units=imperial' , {
+  method: 'GET',
+})
+
+  .then((res) => res.json())
+  .then((data) => {
+      console.log('Successful POST request:', data);
+
+    //day one
+
+    var dayOneDateData = data.list[1].dt_txt.slice(0,10);
+
+    var dayOneDate = document.createElement('h3');
+
+    dayOneDate.innerHTML = `${dayOneDateData}`;
+
+    dayOneDateEl.append(dayOneDate);
+
+    console.log(dayOneDateData);
+
+    //day two
+
+    var dayTwoDateData = data.list[9].dt_txt.slice(0,10);
+
+    var dayTwoDate = document.createElement('h3');
+
+    dayTwoDate.innerHTML = `${dayTwoDateData}`;
+
+    dayTwoDateEl.append(dayTwoDate);
+
+    //day three
+
+    var dayThreeDateData = data.list[17].dt_txt.slice(0,10);
+
+    var dayThreeDate = document.createElement('h3');
+
+    dayThreeDate.innerHTML = `${dayThreeDateData}`;
+
+    dayThreeDateEl.append(dayThreeDate);
+
+    //day four
+
+    var dayFourDateData = data.list[25].dt_txt.slice(0,10);
+
+    var dayFourDate = document.createElement('h3');
+
+    dayFourDate.innerHTML = `${dayFourDateData}`;
+
+    dayFourDateEl.append(dayFourDate);
+
+    //day five
+
+    var dayFiveDateData = data.list[33].dt_txt.slice(0,10);
+
+    var dayFiveDate = document.createElement('h3');
+
+    dayFiveDate.innerHTML = `${dayFiveDateData}`;
+
+    dayFiveDateEl.append(dayFiveDate);
+  })
+
+  .catch((error) => {
+    console.error('Error in POST request:', error);
+  });
+
+
+};
+
+getFiveDayWeather();
