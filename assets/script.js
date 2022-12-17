@@ -58,6 +58,7 @@ var requestOptions = {
     latitude  = result.features[0].bbox[1];
 
     getCurrentWeather();
+    getFiveDayWeather();
   
   
   })
@@ -147,54 +148,96 @@ fetch('https://api.openweathermap.org/data/2.5/forecast?lat=' + latitude + '&lon
     //day one
 
     var dayOneDateData = data.list[1].dt_txt.slice(0,10);
-
     var dayOneDate = document.createElement('h3');
-
     dayOneDate.innerHTML = `${dayOneDateData}`;
 
+    var dayOneTemp = data.list[1].main.temp;
+    var dayOneHum = data.list[1].main.humidity;
+    var dayOneWind =data.list[1].wind.speed;
+    var dayOneWeather = document.createElement('p');
+    dayOneWeather.innerHTML = `Temprature: ${dayOneTemp}
+    Humidity: ${dayOneHum}
+    Wind Speed: ${dayOneWind}`;
+
+  
     dayOneDateEl.append(dayOneDate);
+    dayOneWeatherEl.append(dayOneWeather);
 
     console.log(dayOneDateData);
 
     //day two
 
     var dayTwoDateData = data.list[9].dt_txt.slice(0,10);
-
     var dayTwoDate = document.createElement('h3');
-
     dayTwoDate.innerHTML = `${dayTwoDateData}`;
 
+    var dayTwoTemp = data.list[9].main.temp;
+    var dayTwoHum = data.list[9].main.humidity;
+    var dayTwoWind =data.list[9].wind.speed;
+    var dayTwoWeather = document.createElement('p');
+    dayTwoWeather.innerHTML = `Temprature: ${dayTwoTemp}
+    Humidity: ${dayTwoHum}
+    Wind Speed: ${dayTwoWind}`;
+
+
     dayTwoDateEl.append(dayTwoDate);
+    dayTwoWeatherEl.append(dayTwoWeather);
 
     //day three
 
     var dayThreeDateData = data.list[17].dt_txt.slice(0,10);
-
     var dayThreeDate = document.createElement('h3');
-
     dayThreeDate.innerHTML = `${dayThreeDateData}`;
 
+    var dayThreeTemp = data.list[17].main.temp;
+    var dayThreeHum = data.list[17].main.humidity;
+    var dayThreeWind =data.list[17].wind.speed;
+    var dayThreeWeather = document.createElement('p');
+    dayThreeWeather.innerHTML = `Temprature: ${dayThreeTemp}
+    Humidity: ${dayThreeHum}
+    Wind Speed: ${dayThreeWind}`;
+
+
     dayThreeDateEl.append(dayThreeDate);
+    dayThreeWeatherEl.append(dayThreeWeather);
 
     //day four
 
     var dayFourDateData = data.list[25].dt_txt.slice(0,10);
-
     var dayFourDate = document.createElement('h3');
-
     dayFourDate.innerHTML = `${dayFourDateData}`;
 
+    var dayFourTemp = data.list[25].main.temp;
+    var dayFourHum = data.list[25].main.humidity;
+    var dayFourWind =data.list[25].wind.speed;
+    var dayFourWeather = document.createElement('p');
+    dayFourWeather.innerHTML = `Temprature: ${dayFourTemp}
+    Humidity: ${dayFourHum}
+    Wind Speed: ${dayFourWind}`;
+
+
+
     dayFourDateEl.append(dayFourDate);
+    dayFourWeatherEl.append(dayFourWeather);
 
     //day five
 
     var dayFiveDateData = data.list[33].dt_txt.slice(0,10);
-
     var dayFiveDate = document.createElement('h3');
-
     dayFiveDate.innerHTML = `${dayFiveDateData}`;
 
+    var dayFiveTemp = data.list[25].main.temp;
+    var dayFiveHum = data.list[25].main.humidity;
+    var dayFiveWind =data.list[25].wind.speed;
+    var dayFiveWeather = document.createElement('p');
+    dayFiveWeather.innerHTML = `Temprature: ${dayFiveTemp}
+    Humidity: ${dayFiveHum}
+    Wind Speed: ${dayFiveWind}`;
+
+
+
     dayFiveDateEl.append(dayFiveDate);
+    dayFiveWeatherEl.append(dayFiveWeather);
   })
 
   .catch((error) => {
@@ -204,4 +247,3 @@ fetch('https://api.openweathermap.org/data/2.5/forecast?lat=' + latitude + '&lon
 
 };
 
-getFiveDayWeather();
