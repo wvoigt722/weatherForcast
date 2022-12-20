@@ -31,6 +31,12 @@ dayTwoWeatherEl.textContent = '';
 dayThreeWeatherEl.textContent = '';
 dayFourWeatherEl.textContent = '';
 dayFiveWeatherEl.textContent = '';
+dayOneDateEl.textContent = '';
+dayTwoDateEl.textContent = '';
+dayThreeDateEl.textContent = '';
+dayFourDateEl.textContent = '';
+dayFiveDateEl.textContent = '';
+
 });
 
 
