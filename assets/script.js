@@ -1,10 +1,11 @@
 var searchMainEl = document.querySelector('#search-main');
 var searchMainBtnEl = document.querySelector('#search-main-btn');
+var pastSearchEl = document.getElementById('pastSearches');
 var weatherInfoEl = document.querySelector('#currentWeather');
 var weatherApiKey = '424b38ba3001e9ed90818dd50436deee';
 
-var latitude = 41.8781;
-var longitude =  -87.6298;
+var latitude = '';
+var longitude =  '';
 
 var dayOneDateEl = document.querySelector('#dayOneDate');
 var dayTwoDateEl = document.querySelector('#dayTwoDate');
@@ -21,15 +22,22 @@ var dayFiveWeatherEl = document.querySelector('#dayFiveWeather');
 // Event Listeners
 
 
+localStorage.getItem('prevSearch');
+
 searchMainBtnEl.addEventListener('click', function() {
 weatherInfoEl.classList.remove('d-none');
+
 });
+
+
+
+
+
 
 
 searchMainBtnEl.addEventListener('click', function() {
     console.log(searchMainEl.value);
-    
-
+  
 
  // Geocode API
 
@@ -59,6 +67,7 @@ var requestOptions = {
 
     getCurrentWeather();
     getFiveDayWeather();
+    renderPastSearch();
   
   
   })
@@ -247,3 +256,11 @@ fetch('https://api.openweathermap.org/data/2.5/forecast?lat=' + latitude + '&lon
 
 };
 
+var renderPastSearch = function () {
+var newSearchBtn = document.createElement('button'); 
+newSearchBtn.innerHTML = searchMainEl.value;
+newSearchBtn.classList = ('d-block');
+console.log(newSearchBtn);
+pastSearchEl.appendChild(newSearchBtn);
+localStorage.setItem('prevSearch', searchMainEl.value);
+}
