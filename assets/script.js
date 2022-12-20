@@ -40,7 +40,24 @@ dayFiveDateEl.textContent = '';
 });
 
 
+var storedCities = [];
 
+
+var init = function() {
+  var prevSearch = JSON.parse(localStorage.getItem('prevSearch'));
+
+  if(prevSearch !== null) {
+    storedCities = prevSearch
+  } else {
+    storedCities = [];
+  }
+
+  console.log(storedCities);
+
+}
+
+
+init();
 
 
 
@@ -51,7 +68,12 @@ searchMainBtnEl.addEventListener('click', function() {
  // Geocode API
 
 var city = searchMainEl.value;
-       
+
+storedCities.push(city);
+localStorage.setItem('prevSearch', JSON.stringify(storedCities));
+
+
+
 var requestOptions = {
  method: 'GET',
 };
