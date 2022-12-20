@@ -22,13 +22,16 @@ var dayFiveWeatherEl = document.querySelector('#dayFiveWeather');
 // Event Listeners
 
 
-localStorage.getItem('prevSearch');
 
 searchMainBtnEl.addEventListener('click', function() {
 weatherInfoEl.classList.remove('d-none');
-
+weatherInfoEl.textContent = '';
+dayOneWeatherEl.textContent = '';
+dayTwoWeatherEl.textContent = '';
+dayThreeWeatherEl.textContent = '';
+dayFourWeatherEl.textContent = '';
+dayFiveWeatherEl.textContent = '';
 });
-
 
 
 
@@ -262,5 +265,5 @@ newSearchBtn.innerHTML = searchMainEl.value;
 newSearchBtn.classList = ('d-block');
 console.log(newSearchBtn);
 pastSearchEl.appendChild(newSearchBtn);
-localStorage.setItem('prevSearch', searchMainEl.value);
 }
+
